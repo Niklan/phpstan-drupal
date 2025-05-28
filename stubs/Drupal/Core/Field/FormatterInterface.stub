@@ -3,17 +3,17 @@
 namespace Drupal\Core\Field;
 
 /**
- * @template T of FieldItemListInterface
+ * @template TFieldItem of FieldItemInterface
  */
 interface FormatterInterface extends PluginSettingsInterface {
 
   /**
-   * @param array<T> $entities_items
+   * @param array<FieldItemListInterface<TFieldItem> $entities_items
    */
   public function prepareView(array $entities_items): void;
 
   /**
-   * @param T $items
+   * @param FieldItemListInterface<TFieldItem> $items
    * @param string|null $langcode
    *
    * @return array<int|string, mixed>
@@ -21,7 +21,7 @@ interface FormatterInterface extends PluginSettingsInterface {
   public function view(FieldItemListInterface $items, $langcode = NULL);
 
   /**
-   * @param T $items
+   * @param FieldItemListInterface<TFieldItem> $items
    * @param string $langcode
    *
    * @return array<int, array<int|string, mixed>>
