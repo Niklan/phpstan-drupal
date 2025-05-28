@@ -8,7 +8,7 @@ namespace Drupal\Core\Field;
 interface FormatterInterface extends PluginSettingsInterface {
 
   /**
-   * @param array<FieldItemListInterface<TFieldItem> $entities_items
+   * @param array<FieldItemListInterface<TFieldItem>> $entities_items
    */
   public function prepareView(array $entities_items): void;
 
